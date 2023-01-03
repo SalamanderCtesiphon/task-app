@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div>
         <div>
-        <MyComponent title="React" onButtonClicked={this.onClickBtn} />
+        <MyComponent title="To Do List" onButtonClicked={this.onClickBtn} />
       </div>
       </div>
     );
