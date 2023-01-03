@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import MyComponent from './components/MyComponent';
 
+const ToDoList = [];
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +12,7 @@ class App extends Component {
   }
 
   onClickBtn() {
-    console.log('Button has been clicked!')
+
   }
 
   render() {
