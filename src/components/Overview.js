@@ -1,4 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
 
-class Overview extends Comment 
+const Overview = (props) => {
+  const { tasks } = props;
+
+  return (
+    <ul>
+      {tasks.map((task) => {
+        return <li>{task.text}</li>;
+      })}
+    </ul>
+  );
+};
+
+export default Overview;

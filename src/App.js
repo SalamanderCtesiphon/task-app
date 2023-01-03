@@ -1,28 +1,52 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom/client';
 import MyComponent from './components/MyComponent';
 
-const ToDoList = [];
-const ToDoItem = document.getElementById('ToDoItem');
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    this.onClickBtn = this.onClickBtn.bind(this);
+    this.state = {
+      task: { text: ''},
+      tasks: [],
+    };
   }
 
-  onClickBtn() {
-    ToDoList.push(ToDoItem);
-    console.log(ToDoList);
-  }
+  handleChange = (e) => {
+    this.setState({
+      task: {
+        text: e.target.value,
+      }
+    });
+  };
+
+  onSubmitTask = (e) => {
+    e.preventDefault();
+    this.setState({
+      tasks: this.state.tasks.concat(this.state.task),
+      task: { text: ''},
+    });
+  };
+  
 
   render() {
+    const { task, tasks } = this.state;
+
     return (
       <div>
-        <div>
-        <MyComponent title="To Do List" onButtonClicked={this.onClickBtn} />
-      </div>
+        <h1>To Do List</h1>
+        <form onSubmit={this.onSubmitTask}>
+          <label htmlFor="taskInput">Enter task</label><br></br>
+          <input
+            onChange={this.handleChange}
+            value={task.text}
+            type="text" 
+            id="taskInput"
+          /><br></br>
+          <button type="submit">
+            Add Task
+          </button>
+        </form>
       </div>
     );
   }
