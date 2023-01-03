@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
+import MyComponent from './components/MyComponent';
 
-function App() {
-  return (
-    <div className="App">
-     <h1>hi</h1>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.onClickBtn = this.onClickBtn.bind(this);
+  }
+
+  onClickBtn() {
+    console.log('Button has been clicked!')
+  }
+
+  render() {
+    return (
+      <div>
+        <div>
+        <MyComponent title="React" onButtonClicked={this.onClickBtn} />
+      </div>
+      </div>
+    );
+  }
 }
 
 export default App;
