@@ -9,7 +9,7 @@ class MyComponent extends Component {
     return (
       <div>
         <h1>{this.props.title}</h1>
-        <input></input>
+        <input type="text" id="ToDoItem" placeholder="Enter a task"></input>
         <button onClick={this.props.onButtonClicked}>Submit</button>
       </div>
     );

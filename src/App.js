@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import MyComponent from './components/MyComponent';
 
 const ToDoList = [];
+const ToDoItem = document.getElementById('ToDoItem');
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class App extends Component {
   }
 
   onClickBtn() {
-
+    ToDoList.push(ToDoItem);
+    console.log(ToDoList);
   }
 
   render() {
