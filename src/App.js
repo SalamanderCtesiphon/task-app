@@ -39,6 +39,13 @@ class App extends Component {
       },
     });
   };
+
+  removeTask = (e) => {
+    e.preventDefault();
+    this.setState({
+      tasks: this.state.tasks.filter((task) => task.id !== e.target.id),
+    });
+  };
   
 
   render() {
