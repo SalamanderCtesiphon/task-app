@@ -10,7 +10,7 @@ const Overview = (props) => {
           <div>
             <li key={task.id}>
               {task.number}. {task.text}
-              <button onClick={task.removeTask}>Delete</button>
+              <button onClick={tasks.removeTask}>Delete</button>
             </li>
 
           </div>

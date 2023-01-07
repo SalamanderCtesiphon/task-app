@@ -40,12 +40,12 @@ class App extends Component {
     });
   };
 
-  removeTask = (e) => {
-    e.preventDefault();
+  removeTask = (id) => {
     this.setState({
-      tasks: this.state.tasks.filter((task) => task.id !== e.target.id),
+      tasks: this.state.tasks.slice((task) => task.id !== id),
     });
   };
+
   
 
   render() {
