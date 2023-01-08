@@ -4,8 +4,8 @@ import Overview from './components/Overview';
 
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       task: {
@@ -16,6 +16,11 @@ class App extends Component {
       tasks: [],
       
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.onSubmitTask = this.onSubmitTask.bind(this);
+    this.removeTask = this.removeTask.bind(this);
+
   }
 
   handleChange = (e) => {
@@ -40,11 +45,14 @@ class App extends Component {
     });
   };
 
+  // a method to remove a task
   removeTask = (id) => {
     this.setState({
-      tasks: this.state.tasks.slice((task) => task.id !== id),
+      tasks: this.state.tasks.filter(task => task.id !== id)
     });
   };
+
+  
 
   
 
