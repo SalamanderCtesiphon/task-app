@@ -7,10 +7,14 @@ class App extends Component {
     super(props);
   }
 
+  onClickBtn() {
+    console.log('Your ass is old and smelly')
+  }
+ 
   render() {
     return (
       <div>
-        <MyComponent title="React" />
+        <MyComponent title="React" onButtonClicked={this.onClickBtn} />
       </div>
     )
   }
