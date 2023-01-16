@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
-import MyComponent from './Mycomponent';
+import Overview from './Overview';
 
 
 class App extends Component {
   constructor(props) {
     super(props);
-
-    this.onClickBtn = this.onClickBtn.bind(this);
-  }
-
-  onClickBtn() {
-    console.log('Your ass is old and smelly')
   }
  
   render() {
     return (
       <div>
-        <MyComponent title="React" onButtonClicked={this.onClickBtn} />
+        <h1>Howdy!</h1>
+        <Overview />
       </div>
     )
   }
