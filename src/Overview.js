@@ -6,7 +6,10 @@ const Overview = (props) => {
   return (
     <ul>
       {tasks.map((task) => {
-        return <li key={task.id}>{task.text}</li>;
+        return (
+          <li className="listItem" key={task.id}>{tasks.indexOf(task) + 1}.{" "}{" "}{task.text}</li>
+        )
+        
       })}
     </ul>
   );
