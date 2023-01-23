@@ -5,8 +5,8 @@ import './App.css';
 
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       task: {
@@ -36,6 +36,12 @@ class App extends Component {
       },
     });
   };
+
+  delTask = (id) => {
+    this.setState({
+      tasks: [...this.state.tasks.filter(task => task.id !== id)]
+    })
+  }
  
   render() {
     const { task, tasks } = this.state;
@@ -54,7 +60,8 @@ class App extends Component {
           <button type='submit'>Submit</button>
         </form>
         <div className='list'>
-        <Overview tasks={tasks}/>
+        <Overview tasks={tasks}
+        delTask={this.delTask}/>
         </div>
       </div>
     )

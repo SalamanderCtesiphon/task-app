@@ -19,7 +19,7 @@ h1 {
    background-color: rgb(72, 72, 143);
    color: antiquewhite;
    width: 40vw;
-   height: 10vh;
+   height: 55px;
    border-radius: 10px;
 }
 
@@ -33,11 +33,12 @@ h1 {
 .listItem {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     border: 1px solid black;
     margin: 10px;
     width: 20vw;
-    height: 8vh;
+    height: 45px;
     border-radius: 10px;
-    padding: 4px;
+    padding: 8px;
     box-shadow: 10px 5px 5px darkgrey;
 }
